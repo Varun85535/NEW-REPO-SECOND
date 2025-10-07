@@ -26,7 +26,7 @@ pipeline {
 
     post {
         success {
-            echo '🎉 Build completed successfully!'
+            echo '🎉 Build completed 12345 successfully!'
         }
         failure {
             echo '❌ Build failed. Check console output.'
