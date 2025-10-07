@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Stage 1: Build started'
+                sh 'echo Building project...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Stage 2: Running Tests'
+                sh 'echo All tests passed!'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Stage 3: Deployment stage'
+                sh 'echo Deploying project...'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '🎉 Build completed successfully!'
+        }
+        failure {
+            echo '❌ Build failed. Check console output.'
+        }
+    }
+}
